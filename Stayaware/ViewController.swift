@@ -97,6 +97,8 @@ class ViewController: UIViewController {
         case .sick:
             status = .healthy
         }
+        let modalViewController = PresentationViewController()
+        present(modalViewController, animated: true, completion: nil)
     }
 
 }
