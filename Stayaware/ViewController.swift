@@ -9,9 +9,12 @@
 import UIKit
 import SnapKit
 import MapKit
+import FloatingPanel
 
 class ViewController: UIViewController {
 
+    var floatingPanel : FloatingPanelController!
+    var notificationsViewController : NotificationListViewController!
     var status : Status = .healthy {
         didSet {
             setupButtonUI()
@@ -29,8 +32,14 @@ class ViewController: UIViewController {
         setupPhoneButtonUI()
         setupConstraints()
         setClicks()
+        initFloatingPanel()
     }
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        floatingPanel.removePanelFromParent(animated: true)
+    }
+
     func setupButtonUI() {
         self.view.addSubview(statusButton)
         statusButton.layer.cornerRadius = CGFloat(Constants.Layout.buttonHeight / 2)
@@ -40,7 +49,7 @@ class ViewController: UIViewController {
         statusButton.tintColor = Constants.Colors.plainWhite
         statusButton.layer.applySketchShadow(color: status.getColor(), alpha: 1, x: 0, y: 0, blur: 15, spread: 0)
     }
-    
+
     func setupConstraints() {
         statusButton.snp.makeConstraints { (make) in
             make.width.equalTo(Constants.Layout.statusButtonWidth)
@@ -103,22 +112,44 @@ class ViewController: UIViewController {
 
 }
 
-
 extension ViewController {
     private func callNumber(phoneNumber:String) {
-        
         if let phoneCallURL = URL(string: "telprompt://\(phoneNumber)") {
-            
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
-                if #available(iOS 10.0, *) {
-                    application.open(phoneCallURL, options: [:], completionHandler: nil)
-                } else {
-                    // Fallback on earlier versions
-                    application.openURL(phoneCallURL as URL)
-                    
-                }
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
             }
         }
+    }
+}
+
+extension ViewController : FloatingPanelControllerDelegate {
+    func initFloatingPanel() {
+        floatingPanel = FloatingPanelController()
+        floatingPanel.delegate = self
+        notificationsViewController = NotificationListViewController()
+        floatingPanel.set(contentViewController: notificationsViewController)
+        floatingPanel.addPanel(toParent: self)
+        floatingPanel.surfaceView.backgroundColor = .clear
+    }
+    
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+        return NotificationPanelLayout()
+    }
+    
+    func floatingPanelDidEndDragging(_ vc: FloatingPanelController, withVelocity velocity: CGPoint, targetPosition: inout FloatingPanelPosition) {
+        switch vc.position {
+        case .half:
+            if velocity.y > -1500 {
+                targetPosition = vc.position
+            } else {
+                
+            }
+        default:
+            if velocity.y < 600 {
+                targetPosition = vc.position
+            }
+        }
+         
     }
 }
