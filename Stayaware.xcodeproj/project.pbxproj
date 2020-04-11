@@ -10,6 +10,9 @@
 		339454682EA9FE1376702F6B /* Pods_StayawareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98ED49A094BE5958F0B14D8 /* Pods_StayawareTests.framework */; };
 		60AAA2E02440FEAF00E5229D /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AAA2DF2440FEAF00E5229D /* NotificationListViewController.swift */; };
 		60AAA2E2244103F400E5229D /* NotificationsPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AAA2E1244103F400E5229D /* NotificationsPanelLayout.swift */; };
+		60B1DAEB24423F9D00438F58 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1DAEA24423F9D00438F58 /* TableViewDataSource.swift */; };
+		60B1DAED244244F300438F58 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1DAEC244244F300438F58 /* UITableView.swift */; };
+		60B1DAEF244246A000438F58 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1DAEE244246A000438F58 /* UITableViewCell.swift */; };
 		60E9C275243F4DB900DFB4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9C274243F4DB900DFB4E6 /* AppDelegate.swift */; };
 		60E9C279243F4DB900DFB4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9C278243F4DB900DFB4E6 /* ViewController.swift */; };
 		60E9C27C243F4DB900DFB4E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E9C27A243F4DB900DFB4E6 /* Main.storyboard */; };
@@ -50,6 +53,9 @@
 		312AC4E5E50FC798A543B37B /* Pods-Stayaware.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stayaware.debug.xcconfig"; path = "Target Support Files/Pods-Stayaware/Pods-Stayaware.debug.xcconfig"; sourceTree = "<group>"; };
 		60AAA2DF2440FEAF00E5229D /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
 		60AAA2E1244103F400E5229D /* NotificationsPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPanelLayout.swift; sourceTree = "<group>"; };
+		60B1DAEA24423F9D00438F58 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		60B1DAEC244244F300438F58 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		60B1DAEE244246A000438F58 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		60E9C271243F4DB900DFB4E6 /* Stayaware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stayaware.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E9C274243F4DB900DFB4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E9C278243F4DB900DFB4E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 				60E9C2AD243F7F1B00DFB4E6 /* PresentationViewController.swift */,
 				60AAA2DF2440FEAF00E5229D /* NotificationListViewController.swift */,
 				60AAA2E1244103F400E5229D /* NotificationsPanelLayout.swift */,
+				60B1DAEA24423F9D00438F58 /* TableViewDataSource.swift */,
 			);
 			path = Stayaware;
 			sourceTree = "<group>";
@@ -169,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				60E9C2AA243F5E1800DFB4E6 /* CALayer.swift */,
+				60B1DAEC244244F300438F58 /* UITableView.swift */,
+				60B1DAEE244246A000438F58 /* UITableViewCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -451,7 +460,10 @@
 				60E9C2A8243F56F100DFB4E6 /* Status.swift in Sources */,
 				60E9C279243F4DB900DFB4E6 /* ViewController.swift in Sources */,
 				60E9C2AB243F5E1800DFB4E6 /* CALayer.swift in Sources */,
+				60B1DAED244244F300438F58 /* UITableView.swift in Sources */,
+				60B1DAEF244246A000438F58 /* UITableViewCell.swift in Sources */,
 				60E9C2AE243F7F1B00DFB4E6 /* PresentationViewController.swift in Sources */,
+				60B1DAEB24423F9D00438F58 /* TableViewDataSource.swift in Sources */,
 				60AAA2E02440FEAF00E5229D /* NotificationListViewController.swift in Sources */,
 				60E9C275243F4DB900DFB4E6 /* AppDelegate.swift in Sources */,
 			);

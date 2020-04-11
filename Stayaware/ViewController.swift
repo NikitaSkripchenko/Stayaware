@@ -130,6 +130,7 @@ extension ViewController : FloatingPanelControllerDelegate {
         notificationsViewController = NotificationListViewController()
         floatingPanel.set(contentViewController: notificationsViewController)
         floatingPanel.addPanel(toParent: self)
+        floatingPanel.track(scrollView: notificationsViewController.tableView)
         floatingPanel.surfaceView.backgroundColor = .clear
     }
     
@@ -140,10 +141,8 @@ extension ViewController : FloatingPanelControllerDelegate {
     func floatingPanelDidEndDragging(_ vc: FloatingPanelController, withVelocity velocity: CGPoint, targetPosition: inout FloatingPanelPosition) {
         switch vc.position {
         case .half:
-            if velocity.y > -1500 {
+            if velocity.y > -2200 {
                 targetPosition = vc.position
-            } else {
-                
             }
         default:
             if velocity.y < 600 {
