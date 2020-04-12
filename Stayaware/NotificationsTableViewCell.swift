@@ -14,11 +14,22 @@ class NotificationsTableViewCell : UITableViewCell {
     lazy var titleLabel = UILabel()
     lazy var descriptionLabel = UILabel()
     lazy var content = UIView(frame: CGRect(x:8 , y:0 , width: UIScreen.main.bounds.width - 16, height: 120))
+    lazy var actionTitle = UILabel()
+    lazy var actionImage = UIImageView()
+    lazy var stackView = UIStackView()
     var id: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
+        actionImage.image = UIImage(named: "arrow")
+        if #available(iOS 13.0, *) {
+            actionImage.tintColor = .label
+        } else {
+            // Fallback on earlier versions
+            actionImage.tintColor = .black
+        }
+        actionTitle.text = "читати далі"
     }
     
     func configure(title: String, description: String, id: Int) {
@@ -29,19 +40,41 @@ class NotificationsTableViewCell : UITableViewCell {
     
     func setupUI() {
         self.backgroundColor = .clear
-        content.backgroundColor = .white
+        if #available(iOS 13.0, *) {
+            content.backgroundColor = .secondarySystemBackground
+        } else {
+            // Fallback on earlier versions
+            content.backgroundColor = .white
+        }
         self.addSubview(content)
         content.layer.cornerRadius = 6
         content.layer.applySketchShadow(alpha: 0.1, blur: 8, spread: 3)
         content.addSubview(titleLabel)
+        content.addSubview(descriptionLabel)
+        content.addSubview(actionImage)
+        content.addSubview(actionTitle)
+        
+        content.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.spacing = 8
+        stackView.distribution = .fillProportionally
+        stackView.addArrangedSubview(actionTitle)
+        stackView.addArrangedSubview(actionImage)
+        
+        stackView.snp.makeConstraints { (make) in
+            make.bottom.right.equalTo(content).offset(-16)
+        }
+        
         titleLabel.snp.makeConstraints { (make) in
             make.top.left.equalTo(content).offset(16)
         }
-        content.addSubview(descriptionLabel)
+       
         descriptionLabel.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.left.equalTo(content).offset(16)
         }
+        
     }
 }
 

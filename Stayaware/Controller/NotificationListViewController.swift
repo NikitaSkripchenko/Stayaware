@@ -36,6 +36,7 @@ private extension NotificationListViewController {
         tableView.delegate = self
         tableView.rowHeight = 128
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
         tableView.backgroundColor = .clear
         tableView.register(NotificationsTableViewCell.self)
         tableView.tableFooterView = UIView()

@@ -14,12 +14,12 @@ class NotificationPanelLayout : FloatingPanelLayout {
         return .half
     }
     public var supportedPositions: Set<FloatingPanelPosition> {
-        return [.full, .half]
+        return [ .half]
     }
     
     public func insetFor(position: FloatingPanelPosition) -> CGFloat? {
         switch position {
-        case .full: return 16.0
+        //case .full: return 16.0
         case .half: return 264
         default: return nil
         }
