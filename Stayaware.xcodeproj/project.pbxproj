@@ -13,6 +13,9 @@
 		60B1DAEB24423F9D00438F58 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1DAEA24423F9D00438F58 /* TableViewDataSource.swift */; };
 		60B1DAED244244F300438F58 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1DAEC244244F300438F58 /* UITableView.swift */; };
 		60B1DAEF244246A000438F58 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1DAEE244246A000438F58 /* UITableViewCell.swift */; };
+		60B1DAF12442596700438F58 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1DAF02442596700438F58 /* NotificationsTableViewCell.swift */; };
+		60B1DAF324425A2F00438F58 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B1DAF224425A2F00438F58 /* NotificationModel.swift */; };
+		60B1DAF52442628200438F58 /* NotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B1DAF42442628200438F58 /* NotificationsTableViewCell.xib */; };
 		60E9C275243F4DB900DFB4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9C274243F4DB900DFB4E6 /* AppDelegate.swift */; };
 		60E9C279243F4DB900DFB4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9C278243F4DB900DFB4E6 /* ViewController.swift */; };
 		60E9C27C243F4DB900DFB4E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E9C27A243F4DB900DFB4E6 /* Main.storyboard */; };
@@ -56,6 +59,9 @@
 		60B1DAEA24423F9D00438F58 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		60B1DAEC244244F300438F58 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		60B1DAEE244246A000438F58 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		60B1DAF02442596700438F58 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		60B1DAF224425A2F00438F58 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		60B1DAF42442628200438F58 /* NotificationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsTableViewCell.xib; sourceTree = "<group>"; };
 		60E9C271243F4DB900DFB4E6 /* Stayaware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stayaware.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E9C274243F4DB900DFB4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E9C278243F4DB900DFB4E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +113,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60B1DAF62442642C00438F58 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				60E9C278243F4DB900DFB4E6 /* ViewController.swift */,
+				60E9C2AD243F7F1B00DFB4E6 /* PresentationViewController.swift */,
+				60AAA2DF2440FEAF00E5229D /* NotificationListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		60B1DAF72442646A00438F58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				60E9C2A7243F56F100DFB4E6 /* Status.swift */,
+				60B1DAF224425A2F00438F58 /* NotificationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		60B1DAF82442647B00438F58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				60E9C27A243F4DB900DFB4E6 /* Main.storyboard */,
+				60B1DAF42442628200438F58 /* NotificationsTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		60E9C268243F4DB900DFB4E6 = {
 			isa = PBXGroup;
 			children = (
@@ -133,14 +167,13 @@
 			isa = PBXGroup;
 			children = (
 				60E9C2AC243F7EE200DFB4E6 /* App */,
-				60E9C278243F4DB900DFB4E6 /* ViewController.swift */,
-				60E9C27A243F4DB900DFB4E6 /* Main.storyboard */,
-				60E9C2A7243F56F100DFB4E6 /* Status.swift */,
-				60E9C2A4243F50BC00DFB4E6 /* Utils */,
-				60E9C2AD243F7F1B00DFB4E6 /* PresentationViewController.swift */,
-				60AAA2DF2440FEAF00E5229D /* NotificationListViewController.swift */,
+				60B1DAF62442642C00438F58 /* Controller */,
+				60B1DAF82442647B00438F58 /* View */,
+				60B1DAF72442646A00438F58 /* Model */,
 				60AAA2E1244103F400E5229D /* NotificationsPanelLayout.swift */,
 				60B1DAEA24423F9D00438F58 /* TableViewDataSource.swift */,
+				60B1DAF02442596700438F58 /* NotificationsTableViewCell.swift */,
+				60E9C2A4243F50BC00DFB4E6 /* Utils */,
 			);
 			path = Stayaware;
 			sourceTree = "<group>";
@@ -325,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60B1DAF52442628200438F58 /* NotificationsTableViewCell.xib in Resources */,
 				60E9C281243F4DBC00DFB4E6 /* LaunchScreen.storyboard in Resources */,
 				60E9C27E243F4DBC00DFB4E6 /* Assets.xcassets in Resources */,
 				60E9C27C243F4DB900DFB4E6 /* Main.storyboard in Resources */,
@@ -455,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60B1DAF12442596700438F58 /* NotificationsTableViewCell.swift in Sources */,
 				60E9C2A6243F50CE00DFB4E6 /* Constants.swift in Sources */,
 				60AAA2E2244103F400E5229D /* NotificationsPanelLayout.swift in Sources */,
 				60E9C2A8243F56F100DFB4E6 /* Status.swift in Sources */,
@@ -463,6 +498,7 @@
 				60B1DAED244244F300438F58 /* UITableView.swift in Sources */,
 				60B1DAEF244246A000438F58 /* UITableViewCell.swift in Sources */,
 				60E9C2AE243F7F1B00DFB4E6 /* PresentationViewController.swift in Sources */,
+				60B1DAF324425A2F00438F58 /* NotificationModel.swift in Sources */,
 				60B1DAEB24423F9D00438F58 /* TableViewDataSource.swift in Sources */,
 				60AAA2E02440FEAF00E5229D /* NotificationListViewController.swift in Sources */,
 				60E9C275243F4DB900DFB4E6 /* AppDelegate.swift in Sources */,

@@ -123,10 +123,12 @@ extension ViewController {
     }
 }
 
+
 extension ViewController : FloatingPanelControllerDelegate {
     func initFloatingPanel() {
         floatingPanel = FloatingPanelController()
         floatingPanel.delegate = self
+        floatingPanel.surfaceView.grabberHandle.isHidden = true
         notificationsViewController = NotificationListViewController()
         floatingPanel.set(contentViewController: notificationsViewController)
         floatingPanel.addPanel(toParent: self)
