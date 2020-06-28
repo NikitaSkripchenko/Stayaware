@@ -22,14 +22,6 @@ class NotificationsTableViewCell : UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        actionImage.image = UIImage(named: "arrow")
-        if #available(iOS 13.0, *) {
-            actionImage.tintColor = .label
-        } else {
-            // Fallback on earlier versions
-            actionImage.tintColor = .black
-        }
-        actionTitle.text = "читати далі"
     }
     
     func configure(title: String, description: String, id: Int) {
@@ -39,22 +31,31 @@ class NotificationsTableViewCell : UITableViewCell {
     }
     
     func setupUI() {
-        self.backgroundColor = .clear
-        if #available(iOS 13.0, *) {
-            content.backgroundColor = .secondarySystemBackground
-        } else {
-            // Fallback on earlier versions
-            content.backgroundColor = .white
-        }
-        self.addSubview(content)
-        content.layer.cornerRadius = 6
-        content.layer.applySketchShadow(alpha: 0.1, blur: 8, spread: 3)
         content.addSubview(titleLabel)
         content.addSubview(descriptionLabel)
         content.addSubview(actionImage)
         content.addSubview(actionTitle)
-        
         content.addSubview(stackView)
+        
+        actionImage.image = UIImage(named: "arrow")
+        content.layer.cornerRadius = 6
+        content.layer.applySketchShadow(alpha: 0.1, blur: 8, spread: 3)
+        actionTitle.text = "читати далі"
+        self.backgroundColor = .clear
+        self.addSubview(content)
+       
+        if #available(iOS 13.0, *) {
+            actionImage.tintColor = .label
+            content.backgroundColor = .secondarySystemBackground
+        } else {
+            // Fallback on earlier versions
+            actionImage.tintColor = .black
+            content.backgroundColor = .white
+        }
+        arrangeViews()
+    }
+    
+    func arrangeViews() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.spacing = 8
@@ -69,12 +70,11 @@ class NotificationsTableViewCell : UITableViewCell {
         titleLabel.snp.makeConstraints { (make) in
             make.top.left.equalTo(content).offset(16)
         }
-       
+        
         descriptionLabel.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.left.equalTo(content).offset(16)
         }
-        
     }
 }
 
